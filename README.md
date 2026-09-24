@@ -40,3 +40,4 @@ Use any local server instead:
 - **Change the accent color**: edit `--accent` and `--accent-rgb` in `css/style.css`, and `ACCENT` in `js/scene.js`.
 - **Stats** (years, projects…): edit the `data-count` numbers in the About section of `index.html`.
 # portfolio.am
+# portfolio.am
