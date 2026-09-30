@@ -8,8 +8,9 @@ index.html          → all page sections
 css/style.css       → theme & styles (colors at the top in :root)
 js/data.js          → YOUR PROJECTS — edit this file to add/change projects
 js/main.js          → UI: loader, typing text, tilt cards, skills sphere, contact form
-js/scene.js         → Three.js 3D background (blob, rings, particles)
-assets/             → put your photo, CV and project screenshots here
+js/scene.js         → Three.js scene: robot head that follows the cursor, rings, particles
+assets/             → CV (Asiful-Mowla-CV.pdf), photo (profile.webp), link preview (og-image.jpg)
+assets/projects/    → project screenshots
 ```
 
 ## Run locally
@@ -34,11 +35,11 @@ Use any local server instead:
 3. On GitHub: **Settings → Pages → Source: Deploy from a branch → main / (root) → Save**. Live in ~1 minute.
 
 ## Common edits
-- **Add a project**: copy a block in `js/data.js`. Put a screenshot in `assets/projects/` and set `image: "assets/projects/name.jpg"`. Set `live` / `github` links.
-- **Add your CV**: save it as `assets/Asiful-Mowla-CV.pdf`, then in `index.html` find `Download CV`, set `href="assets/Asiful-Mowla-CV.pdf" download`, and remove the `disabled-cv` class and the `soon` badge.
-- **Add your photo**: save as `assets/profile.jpg`, then in `index.html` replace `<span>AM</span>` inside `.about-avatar` with `<img src="assets/profile.jpg" alt="Asiful Mowla">`.
+- **Add / edit a project**: edit `js/data.js`. Put a screenshot (about 1280×720) in `assets/projects/` and set `image: "assets/projects/name.jpg"`. Set `live` / `github` links — empty links are hidden automatically.
+- **Update the CV**: replace `assets/Asiful-Mowla-CV.pdf` with the new file (keep the same name).
+- **Change the photo**: replace `assets/profile.webp` (square image, transparent or dark background works best).
+- **Experience, education, certifications**: the *05 / Journey* section in `index.html`.
 - **Change the accent color**: edit `--accent` and `--accent-rgb` in `css/style.css`, and `ACCENT` in `js/scene.js`.
 - **Stats** (years, projects…): edit the `data-count` numbers in the About section of `index.html`.
-# portfolio.am
-# portfolio.am
-portfolio.am
+
+Live: https://thunder5316r.github.io/portfolio.am/

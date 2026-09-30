@@ -39,15 +39,17 @@
   const grid = $("#projectGrid");
   (window.PROJECTS || []).forEach((p) => {
     const col = document.createElement("div");
-    col.className = "col-md-6 col-lg-4 project-col reveal";
+    col.className = "col-md-6 project-col reveal";
     col.dataset.category = (p.category || []).join(" ");
     const thumb = p.image
       ? `<img src="${p.image}" alt="${p.title} screenshot" loading="lazy">`
       : `<div class="thumb-art" style="background:radial-gradient(circle at 30% 20%, ${p.colors[0]}, ${p.colors[1]} 70%)">
            <div class="mock"><div class="mock-bar"><i></i><i></i><i></i></div><div class="mock-body"><i class="bi bi-${p.icon}"></i></div></div>
          </div>`;
+    // Only show the links a project actually has
     const link = (url, icon, label) =>
-      `<a href="${url || "#"}" ${url ? 'target="_blank" rel="noopener"' : 'class="disabled" aria-disabled="true"'}><i class="bi bi-${icon}"></i> ${label}</a>`;
+      url ? `<a href="${url}" target="_blank" rel="noopener"><i class="bi bi-${icon}"></i> ${label}</a>` : "";
+    const links = link(p.live, "box-arrow-up-right", p.liveLabel || "Live site") + link(p.github, "github", "Source code");
     col.innerHTML = `
       <article class="project-card tilt">
         <div class="project-thumb">${thumb}<span class="project-badge mono">${p.badge || ""}</span></div>
@@ -56,8 +58,7 @@
           <p>${p.desc}</p>
           <div class="tag-row mono">${p.tags.map((t) => `<span>${t}</span>`).join("")}</div>
           <div class="project-links mono">
-            ${link(p.live, "box-arrow-up-right", "Live demo")}
-            ${link(p.github, "github", "Source")}
+            ${links || `<span class="private"><i class="bi bi-lock"></i> ${p.note || "Code available on request"}</span>`}
           </div>
         </div>
       </article>`;
@@ -186,10 +187,10 @@
   const counterObs = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       if (!e.isIntersecting) return;
-      const el = e.target, target = +el.dataset.count, start = performance.now(), dur = 1600;
+      const el = e.target, target = +el.dataset.count, dec = +(el.dataset.decimals || 0), start = performance.now(), dur = 1600;
       (function step(now) {
         const p = Math.min((now - start) / dur, 1);
-        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+        el.textContent = (target * (1 - Math.pow(1 - p, 3))).toFixed(dec);
         if (p < 1) requestAnimationFrame(step);
       })(start);
       counterObs.unobserve(el);
@@ -201,9 +202,9 @@
   (function tagSphere() {
     const el = $("#tagSphere");
     if (!el) return;
-    const tags = ["HTML5", "CSS3", "JavaScript", "PHP", "Laravel", "MySQL", "SQL", "Bootstrap", "jQuery", "REST API",
-      "Git", "GitHub", "Blade", "Eloquent", "JSON", "AJAX", "MVC", "XAMPP", "VS Code", "Composer", "npm", "Responsive", "OOP", "Auth"];
-    const highlight = ["Laravel", "PHP", "JavaScript", "MySQL", "HTML5", "CSS3"];
+    const tags = ["HTML5", "CSS3", "JavaScript", "React", "Tailwind", "PHP", "Laravel", "MySQL", "SQL", "Bootstrap", "jQuery", "REST API",
+      "OpenAI API", "Git", "GitHub", "Blade", "Eloquent", "JSON", "AJAX", "MVC", "XAMPP", "VS Code", "Composer", "MS Access", "Responsive", "OOP"];
+    const highlight = ["Laravel", "PHP", "JavaScript", "MySQL", "React", "Tailwind"];
     const spans = tags.map((t) => {
       const s = document.createElement("span");
       s.textContent = t;
