@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asiful Mowla — Full Stack Web Developer</title>
+  <meta name="description" content="Asiful Mowla — Full Stack Web Developer from Noakhali, Bangladesh. HTML, CSS, JavaScript, PHP, Laravel and SQL.">
+  <meta name="theme-color" content="#0c0d10">
+  <meta property="og:title" content="Asiful Mowla — Full Stack Web Developer">
+  <meta property="og:description" content="I build fast, clean and reliable web applications with Laravel, PHP and modern JavaScript.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230c0d10'/><text x='50%' y='56%' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='30' fill='%23c6ff3d'>AM</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap icons + Devicons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" rel="stylesheet">
+  <!-- Custom -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-inner">
+      <span class="loader-logo">AM<span class="accent">.</span></span>
+      <div class="loader-bar"><span id="loaderBar"></span></div>
+      <span class="loader-pct mono" id="loaderPct">0%</span>
+    </div>
+  </div>
+
+  <!-- 3D background canvas -->
+  <canvas id="webgl"></canvas>
+  <div class="noise"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="#home">AM<span class="accent">.</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+        <span class="toggler-line"></span><span class="toggler-line"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="#about"><span class="mono">01</span> About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills"><span class="mono">02</span> Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services"><span class="mono">03</span> Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects"><span class="mono">04</span> Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#journey"><span class="mono">05</span> Journey</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact"><span class="mono">06</span> Contact</a></li>
+        </ul>
+        <a href="#contact" class="btn btn-accent btn-sm">Hire me <i class="bi bi-arrow-up-right"></i></a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="status-pill reveal-hero"><span class="pulse"></span> Available for freelance &amp; full-time work</div>
+            <p class="mono hero-kicker reveal-hero">Hi, I'm</p>
+            <h1 class="hero-title">
+              <span class="line"><span class="reveal-word">Asiful</span></span>
+              <span class="line"><span class="reveal-word">Mowla<span class="accent">.</span></span></span>
+            </h1>
+            <h2 class="hero-sub reveal-hero">
+              I build <span class="typed accent" id="typed">full stack web apps</span><span class="caret">|</span>
+            </h2>
+            <p class="hero-lead reveal-hero">
+              Full Stack Web Developer from Noakhali, Bangladesh — shipping fast, clean and
+              reliable products with Laravel, PHP, SQL and modern JavaScript.
+            </p>
+            <div class="d-flex flex-wrap gap-3 reveal-hero">
+              <a href="#projects" class="btn btn-accent btn-lg magnetic">View my work <i class="bi bi-arrow-down-right"></i></a>
+              <a href="#contact" class="btn btn-ghost btn-lg magnetic">Let's talk</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-meta container">
+        <div class="mono"><i class="bi bi-geo-alt"></i> Noakhali, BD</div>
+        <div class="mono scroll-hint">Scroll <span class="scroll-line"></span></div>
+        <div class="mono d-none d-md-block"><span id="localTime">--:--</span> GMT+6</div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee">
+      <div class="marquee-track mono">
+        <span>HTML</span><i>✦</i><span>CSS</span><i>✦</i><span>JavaScript</span><i>✦</i><span>PHP</span><i>✦</i><span>Laravel</span><i>✦</i><span>MySQL</span><i>✦</i><span>Bootstrap</span><i>✦</i><span>REST APIs</span><i>✦</i><span>Git</span><i>✦</i>
+        <span>HTML</span><i>✦</i><span>CSS</span><i>✦</i><span>JavaScript</span><i>✦</i><span>PHP</span><i>✦</i><span>Laravel</span><i>✦</i><span>MySQL</span><i>✦</i><span>Bootstrap</span><i>✦</i><span>REST APIs</span><i>✦</i><span>Git</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- 01 ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-label mono reveal">01 / About</div>
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-7">
+            <h2 class="section-title reveal">Turning ideas into <span class="accent">working products</span> — from database to pixel.</h2>
+            <p class="lead-text reveal">
+              I'm Asiful, a full stack web developer based in Noakhali, Bangladesh. I enjoy the whole
+              journey of a web product: designing the data model, writing clean back-end logic with
+              PHP and Laravel, and crafting responsive, fast interfaces with HTML, CSS and JavaScript.
+            </p>
+            <p class="lead-text reveal">
+              Currently I'm a developer at <strong>HolidayzerBD</strong>, where I build and maintain
+              features for real users. I hold a <strong>Diploma in Computer Engineering</strong>, and I'm
+              always learning — the goal is simple: software that's reliable, easy to use and easy to maintain.
+            </p>
+            <div class="d-flex flex-wrap gap-3 mt-4 reveal">
+              <a href="#contact" class="btn btn-accent">Get in touch</a>
+              <a href="#" class="btn btn-ghost disabled-cv" title="CV coming soon"><i class="bi bi-download"></i> Download CV <span class="soon mono">soon</span></a>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="about-card tilt reveal">
+              <div class="about-avatar">
+                <span>AM</span>
+                <div class="avatar-ring"></div>
+              </div>
+              <div class="about-info">
+                <div class="info-row"><span class="mono">Name</span><span>Asiful Mowla</span></div>
+                <div class="info-row"><span class="mono">Role</span><span>Full Stack Developer</span></div>
+                <div class="info-row"><span class="mono">Based in</span><span>Noakhali, Bangladesh</span></div>
+                <div class="info-row"><span class="mono">Currently</span><span>Developer @ HolidayzerBD</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-3 stats">
+          <div class="col-6 col-md-3 reveal"><div class="stat"><span class="stat-num" data-count="2">0</span><span class="accent">+</span><p>Years coding</p></div></div>
+          <div class="col-6 col-md-3 reveal"><div class="stat"><span class="stat-num" data-count="15">0</span><span class="accent">+</span><p>Projects built</p></div></div>
+          <div class="col-6 col-md-3 reveal"><div class="stat"><span class="stat-num" data-count="8">0</span><span class="accent">+</span><p>Technologies</p></div></div>
+          <div class="col-6 col-md-3 reveal"><div class="stat"><span class="stat-num" data-count="100">0</span><span class="accent">%</span><p>Commitment</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 SKILLS -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-label mono reveal">02 / Skills</div>
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6 order-lg-2">
+            <div class="sphere-wrap reveal">
+              <div id="tagSphere" class="tag-sphere" aria-hidden="true"></div>
+              <p class="mono sphere-hint">drag / hover the sphere</p>
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <h2 class="section-title reveal">My <span class="accent">toolbox</span>.</h2>
+            <p class="lead-text reveal">The stack I use every day to design, build and ship web applications end to end.</p>
+
+            <div class="skill-group reveal">
+              <h3 class="mono">Front-end</h3>
+              <div class="skill-chips">
+                <span class="chip"><i class="devicon-html5-plain"></i> HTML5</span>
+                <span class="chip"><i class="devicon-css3-plain"></i> CSS3</span>
+                <span class="chip"><i class="devicon-javascript-plain"></i> JavaScript</span>
+                <span class="chip"><i class="devicon-bootstrap-plain"></i> Bootstrap</span>
+                <span class="chip"><i class="devicon-jquery-plain"></i> jQuery</span>
+              </div>
+            </div>
+            <div class="skill-group reveal">
+              <h3 class="mono">Back-end</h3>
+              <div class="skill-chips">
+                <span class="chip"><i class="devicon-php-plain"></i> PHP</span>
+                <span class="chip"><i class="devicon-laravel-original"></i> Laravel</span>
+                <span class="chip"><i class="bi bi-braces"></i> REST APIs</span>
+                <span class="chip"><i class="bi bi-shield-lock"></i> Auth &amp; Roles</span>
+              </div>
+            </div>
+            <div class="skill-group reveal">
+              <h3 class="mono">Database &amp; Tools</h3>
+              <div class="skill-chips">
+                <span class="chip"><i class="devicon-mysql-original"></i> MySQL / SQL</span>
+                <span class="chip"><i class="devicon-git-plain"></i> Git</span>
+                <span class="chip"><i class="devicon-github-original"></i> GitHub</span>
+                <span class="chip"><i class="devicon-vscode-plain"></i> VS Code</span>
+                <span class="chip"><i class="bi bi-hdd-stack"></i> XAMPP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 SERVICES -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-label mono reveal">03 / Services</div>
+        <h2 class="section-title reveal">What I can <span class="accent">build for you</span>.</h2>
+        <div class="row g-4 mt-2">
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="service-card tilt">
+              <div class="service-num mono">/01</div>
+              <div class="service-icon"><i class="bi bi-window-stack"></i></div>
+              <h3>Front-end Development</h3>
+              <p>Responsive, accessible and fast interfaces built with HTML, CSS, Bootstrap and JavaScript — pixel-accurate on every screen.</p>
+              <ul class="mono"><li>Landing pages</li><li>Responsive UI</li><li>Interactive components</li></ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="service-card tilt">
+              <div class="service-num mono">/02</div>
+              <div class="service-icon"><i class="bi bi-server"></i></div>
+              <h3>Back-end &amp; APIs</h3>
+              <p>Secure, well-structured server logic with PHP and Laravel: authentication, roles, REST APIs and clean database design.</p>
+              <ul class="mono"><li>Laravel apps</li><li>REST APIs</li><li>SQL schema design</li></ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="service-card tilt">
+              <div class="service-num mono">/03</div>
+              <div class="service-icon"><i class="bi bi-layers"></i></div>
+              <h3>Full Stack Web Apps</h3>
+              <p>Complete products from idea to launch — dashboards, admin panels, booking and management systems.</p>
+              <ul class="mono"><li>Admin dashboards</li><li>Management systems</li><li>Deployment</li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-label mono reveal">04 / Selected Projects</div>
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+          <h2 class="section-title mb-0 reveal">Things I've <span class="accent">built</span>.</h2>
+          <div class="filters mono reveal" id="projectFilters">
+            <button class="active" data-filter="all">All</button>
+            <button data-filter="laravel">Laravel</button>
+            <button data-filter="php">PHP</button>
+            <button data-filter="frontend">Front-end</button>
+          </div>
+        </div>
+
+        <div class="row g-4" id="projectGrid">
+          <!-- Project cards are rendered from js/data.js -->
+        </div>
+
+        <div class="text-center mt-5 reveal">
+          <a href="https://github.com/Thunder5316R" target="_blank" rel="noopener" class="btn btn-ghost btn-lg magnetic"><i class="bi bi-github"></i> More on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 JOURNEY -->
+    <section id="journey" class="section">
+      <div class="container">
+        <div class="section-label mono reveal">05 / Journey</div>
+        <h2 class="section-title reveal">Experience &amp; <span class="accent">education</span>.</h2>
+        <div class="timeline mt-5">
+          <div class="tl-item reveal">
+            <div class="tl-dot"><i class="bi bi-briefcase"></i></div>
+            <div class="tl-card">
+              <div class="tl-meta mono">Experience · Present</div>
+              <h3>Developer <span class="text-muted-2">@</span> HolidayzerBD</h3>
+              <p>Building and maintaining web features end to end — from database tables and Laravel back-end logic to responsive front-end pages used by real customers.</p>
+              <div class="tag-row mono"><span>Laravel</span><span>PHP</span><span>MySQL</span><span>JavaScript</span></div>
+            </div>
+          </div>
+          <div class="tl-item reveal">
+            <div class="tl-dot"><i class="bi bi-mortarboard"></i></div>
+            <div class="tl-card">
+              <div class="tl-meta mono">Education</div>
+              <h3>Diploma in Computer Engineering</h3>
+              <p>Foundations in programming, data structures, databases, networking and computer systems — the base for everything I build today.</p>
+              <div class="tag-row mono"><span>Programming</span><span>Databases</span><span>Networking</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-label mono reveal">06 / Contact</div>
+        <div class="row g-5">
+          <div class="col-lg-6">
+            <h2 class="contact-title reveal">Have a project in mind?<br><span class="accent">Let's build it.</span></h2>
+            <p class="lead-text reveal">I'm open to freelance projects, collaborations and full-time roles. Drop a message and I'll get back to you quickly.</p>
+            <div class="contact-links reveal">
+              <a href="mailto:asifulmowla231@gmail.com" class="contact-link">
+                <i class="bi bi-envelope"></i>
+                <div><span class="mono">Email</span>asifulmowla231@gmail.com</div>
+                <i class="bi bi-arrow-up-right ms-auto"></i>
+              </a>
+              <a href="https://wa.me/8801745513701" target="_blank" rel="noopener" class="contact-link">
+                <i class="bi bi-whatsapp"></i>
+                <div><span class="mono">WhatsApp</span>+880 1745-513701</div>
+                <i class="bi bi-arrow-up-right ms-auto"></i>
+              </a>
+              <a href="https://github.com/Thunder5316R" target="_blank" rel="noopener" class="contact-link">
+                <i class="bi bi-github"></i>
+                <div><span class="mono">GitHub</span>github.com/Thunder5316R</div>
+                <i class="bi bi-arrow-up-right ms-auto"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <form class="contact-form reveal" id="contactForm" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label mono" for="cName">Name</label>
+                  <input class="form-control" id="cName" required placeholder="Your name">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label mono" for="cEmail">Email</label>
+                  <input class="form-control" id="cEmail" type="email" required placeholder="you@example.com">
+                </div>
+                <div class="col-12">
+                  <label class="form-label mono" for="cSubject">Subject</label>
+                  <input class="form-control" id="cSubject" placeholder="Project inquiry">
+                </div>
+                <div class="col-12">
+                  <label class="form-label mono" for="cMsg">Message</label>
+                  <textarea class="form-control" id="cMsg" rows="5" required placeholder="Tell me about your project..."></textarea>
+                </div>
+                <div class="col-12 d-flex flex-wrap gap-3">
+                  <button type="submit" class="btn btn-accent btn-lg"><i class="bi bi-send"></i> Send via Email</button>
+                  <button type="button" class="btn btn-ghost btn-lg" id="waSend"><i class="bi bi-whatsapp"></i> Send via WhatsApp</button>
+                </div>
+                <div class="col-12"><p class="form-note mono" id="formNote"></p></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+      <div class="mono">© <span id="year"></span> Asiful Mowla. All rights reserved.</div>
+      <div class="mono text-muted-2">Built with HTML · Bootstrap · Three.js · GSAP</div>
+      <a href="#home" class="back-top mono">Back to top <i class="bi bi-arrow-up"></i></a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js" } }
+  </script>
+  <script type="module" src="js/scene.js"></script>
+</body>
+</html>
