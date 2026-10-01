@@ -8,7 +8,7 @@ index.html          → all page sections
 css/style.css       → theme & styles (colors at the top in :root)
 js/data.js          → YOUR PROJECTS — edit this file to add/change projects
 js/main.js          → UI: loader, typing text, tilt cards, skills sphere, contact form
-js/scene.js         → Three.js scene: robot head that follows the cursor, rings, particles
+js/scene.js         → Three.js scene: cute chrome robot that follows the cursor + one 3D piece per section that animates in on scroll
 assets/             → CV (Asiful-Mowla-CV.pdf), photo (profile.webp), link preview (og-image.jpg)
 assets/projects/    → project screenshots
 ```
@@ -39,6 +39,7 @@ Use any local server instead:
 - **Update the CV**: replace `assets/Asiful-Mowla-CV.pdf` with the new file (keep the same name).
 - **Change the photo**: replace `assets/profile.webp` (square image, transparent or dark background works best).
 - **Experience, education, certifications**: the *05 / Journey* section in `index.html`.
+- **3D pieces per section**: each `piece("section-id", { x, yPx, scale ... })` block in `js/scene.js` — `x` is the position across the screen (0–1), `yPx` the distance from the section's top (or bottom with `fromBottom: true`).
 - **Change the accent color**: edit `--accent` and `--accent-rgb` in `css/style.css`, and `ACCENT` in `js/scene.js`.
 - **Stats** (years, projects…): edit the `data-count` numbers in the About section of `index.html`.
 
